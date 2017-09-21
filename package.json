@@ -2,7 +2,7 @@
   "name": "react-table",
   "version": "1.0.0",
   "description": "React table component with sort, search, paging etc..",
-  "main": "dist/js/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

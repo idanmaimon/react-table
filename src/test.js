@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Table from '../index';
+import Table from './index';
 
 class App extends React.Component {
 	getCols() {

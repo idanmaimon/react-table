@@ -12,7 +12,8 @@ var gulp        = require('gulp'),
 	merge = require('utils-merge'),
 	duration = require('gulp-duration');
 
-var browserifySrc = 'src/test.js';
+var browserifySrc = 'src/index.js',
+	outputDist = './'; // dist/js
 
 function mapError(err) {
 	if (err.fileName) {
@@ -39,7 +40,7 @@ function bundle(bundler) {
 		.pipe(source('index.js')) // Set source name
 		.pipe(buffer()) // Convert to gulp pipeline
 		.pipe(rename('index.js')) // Rename the output file
-		.pipe(gulp.dest('dist/js')) // Set the output folder
+		.pipe(gulp.dest(outputDist)) // Set the output folder
 		.pipe(notify({
 			message: 'Generated file: <%= file.relative %>',
 		})) // Output the file being created
