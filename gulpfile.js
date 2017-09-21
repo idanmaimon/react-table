@@ -14,6 +14,7 @@ var gulp        = require('gulp'),
 
 var browserifySrc = 'src/index.js',
 	outputDist = './'; // dist/js
+	outputDist = 'dist/js';
 
 function mapError(err) {
 	if (err.fileName) {

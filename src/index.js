@@ -1,8 +1,7 @@
 'use strict';
 import React from 'react';
 import Pager from 'react-pager';
-import cloneDeep from 'lodash.clonedeep';
-
+//import cloneDeep from 'lodash.clonedeep';
 
 function numberFormat(number,sep) {
 	number = typeof number !== "undefined" && number > 0 ? number : "";
@@ -13,11 +12,7 @@ function numberFormat(number,sep) {
 	return number;
 }
 
-function sort() {
-
-}
-
-class Table extends React.Component {
+export default class Table extends React.Component {
 	constructor(props) {
 		super(props);
 
