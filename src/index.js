@@ -3,7 +3,7 @@ import React from 'react';
 import Pager from 'react-pager';
 //import cloneDeep from 'lodash.clonedeep';
 
-export default class Table extends React.Component {
+export default class extends React.Component {
 	constructor(props) {
 		super(props);
 

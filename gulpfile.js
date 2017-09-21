@@ -12,7 +12,7 @@ var gulp        = require('gulp'),
 	merge = require('utils-merge'),
 	duration = require('gulp-duration');
 
-var browserifySrc = 'src/index.js',
+var browserifySrc = 'index.js',
 	outputDist = './'; // dist/js
 	outputDist = 'dist/js';
 
