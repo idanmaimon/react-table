@@ -3,15 +3,6 @@ import React from 'react';
 import Pager from 'react-pager';
 //import cloneDeep from 'lodash.clonedeep';
 
-function numberFormat(number,sep) {
-	number = typeof number !== "undefined" && number > 0 ? number : "";
-	number = number.replace(new RegExp("^(\\d{" + (number.length%3? number.length%3:0) + "})(\\d{3})", "g"), "$1 $2").replace(/(\d{3})+?/gi, "$1 ").trim();
-	if(typeof sep !== "undefined" && sep !== " ") {
-		number = number.replace(/\s/g, sep);
-	}
-	return number;
-}
-
 export default class Table extends React.Component {
 	constructor(props) {
 		super(props);
@@ -32,6 +23,14 @@ export default class Table extends React.Component {
 			count:0,
 			total: 0
 		};
+	}
+	numberFormat(number,sep) {
+		number = typeof number !== "undefined" && number > 0 ? number : "";
+		number = number.replace(new RegExp("^(\\d{" + (number.length%3? number.length%3:0) + "})(\\d{3})", "g"), "$1 $2").replace(/(\d{3})+?/gi, "$1 ").trim();
+		if(typeof sep !== "undefined" && sep !== " ") {
+			number = number.replace(/\s/g, sep);
+		}
+		return number;
 	}
 	componentWillReceiveProps(props) {
 		if(JSON.stringify(props) !== JSON.stringify(this.props)) {
@@ -205,7 +204,7 @@ export default class Table extends React.Component {
 			</div>
 			<div style={{display: this.props.showPager ? "block" : "none" }}>
 				<div className="row"><div className="col-sm-5">
-					<div className="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing {this.state.from} to {this.state.to} of {numberFormat(this.state.count+"",",")} results</div>
+					<div className="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing {this.state.from} to {this.state.to} of {this.numberFormat(this.state.count+"",",")} results</div>
 				</div>
 					<div className="col-sm-7">
 						<Pager total={this.state.total}
@@ -223,5 +222,3 @@ export default class Table extends React.Component {
 
 	}
 }
-
-module.exports = Table;
