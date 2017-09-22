@@ -12,8 +12,7 @@ var gulp        = require('gulp'),
 	merge = require('utils-merge'),
 	duration = require('gulp-duration');
 
-var browserifySrc = 'index.js',
-	outputDist = './'; // dist/js
+var browserifySrc = 'src/index.js',
 	outputDist = 'dist';
 
 function mapError(err) {
@@ -56,8 +55,8 @@ function bundle(bundler) {
 gulp.task('browserify', function() {
 	var args = merge(watchify.args, { debug: false }); // Merge in default watchify args with browserify arguments
 	var bundler = browserify(browserifySrc, args) // Browserify
-		.plugin(watchify, {ignoreWatch: ['**/node_modules/**', '**/bower_components/**']}) // Watchify to watch source file changes
-		.transform(babelify, {presets: ['es2015', 'react']}); // Babel tranforms
+		.plugin(watchify, {ignoreWatch: ['**/node_modules/**']}) // Watchify to watch source file changes
+		.transform(babelify); // Babel tranforms
 
 	bundle(bundler); // Run the bundle the first time (required for Watchify to kick in)
 
