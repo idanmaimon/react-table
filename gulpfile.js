@@ -14,7 +14,7 @@ var gulp        = require('gulp'),
 
 var browserifySrc = 'index.js',
 	outputDist = './'; // dist/js
-	outputDist = 'dist/js';
+	outputDist = 'dist';
 
 function mapError(err) {
 	if (err.fileName) {
@@ -75,7 +75,7 @@ gulp.task('server', function() {
 	connect.server({
 		root: 'dist',
 		host: 'localhost',
-		port: 3200,
+		port: 3300,
 		livereload: false
 	});
 });
