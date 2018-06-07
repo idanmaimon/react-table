@@ -1,13 +1,13 @@
 # react-table
 
-Alt-H1 React Table
+## React Table
 ==================
 A Dynamic table for server side sorting, pagination and search
 Each Column can be rendered as a type string,Date or Your Own React Component
 If you decide to use your component for column display, the related item will be pass to your component 
 via props as props.data
 
-Alt-H2 Usage Example
+### Usage Example
 ====================
 ```
 import React
